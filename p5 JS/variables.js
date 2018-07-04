@@ -13,7 +13,7 @@ function draw() {
     //ellipse(mouseX, mouseY, 25, 25);
     //own variable
     ellipse(circleX, 200, 25, 25);
-    circleX+=1;
+    circleX += 1;
 }
 
 function mousePressed() {
