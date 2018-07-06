@@ -11,8 +11,6 @@ function setup() {
 // Draw function runs every time
 function draw() {
     background(0);
-    //stroke(255);
-    //nofill();
     ellipse(ball.x, ball.y, 20, 20);
     if (ball.x > width || ball.x < 0) ball.xspeed = ball.xspeed * -1;
     if (ball.y > height || ball.y < 0) ball.yspeed = ball.yspeed * -1;
