@@ -7,11 +7,6 @@ function setup() {
 }
 // Draw function runs every time
 function draw() {
-    for (var i = 0; i < 5; i++) {
-        bubble3 = new Bubble();
-        bubble3.show();
-        bubble3.move();
-    }
     background(50);
     bubble1.show();
     bubble1.move();
