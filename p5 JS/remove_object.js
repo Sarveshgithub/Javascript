@@ -12,20 +12,20 @@ function setup() {
 
 function mousePressed() {
     //   bubbles.push(new Bubble(mouseX, mouseY, random(10,20)));
-    for (let i = 0; i < bubbles.length; i++) {
-        bubbles[i].clicked(mouseX, mouseY);
+    for (let i = bubbles.length -1 ; i >= 0; i--) {
+        if(bubbles[i].clicked(mouseX, mouseY))
+            bubbles.splice(i,1);
     }
+    if(bubbles.length == 0)
+        setup();
 }
-// function mouseDragged(){
-//     bubbles.push(new Bubble(mouseX, mouseY, random(10,20)));
-// }
 // Draw function runs every time
 function draw() {
     background(200);
     //bubbles.forEach(e => e.show())
     for (let i = 0; i < bubbles.length; i++) {
         bubbles[i].show();
-        //bubbles[i].move();
+        bubbles[i].move();
     }
 }
 class Bubble {
@@ -37,10 +37,8 @@ class Bubble {
     }
     clicked(mx, my) {
         let d = dist(mx, my, this.x, this.y);
-        if (d < this.r) {
-            if (this.brightness == 0) this.brightness = 150;
-            else this.brightness = 0;
-        }
+        if (d < this.r) return true;
+        else return false;
     }
     move() {
         this.x = this.x + random(-4, 4);
