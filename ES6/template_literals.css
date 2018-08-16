@@ -1,0 +1,14 @@
+body{
+    /* margin : 0; */
+    /* padding: 0; */
+    background-color:#f4f4f4;
+    color:#555555;
+    font: normal 16px Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+
+}
+.container {
+   width: 100%;
+   margin: auto;
+   /* padding:10px; */
+}
