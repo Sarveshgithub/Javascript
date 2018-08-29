@@ -10,18 +10,23 @@ const people = [{
 }, {
     name: 'Anil',
     age: 18
-},];
+}];
 
 function onload() {
+  let filterAge = people.filter(val => { 
+      return val.age >= 19;
+  }
+  )
+  //console.log(filterAge);
 
-    let filterAge = people.filter((person) => person.age > 18);
-    console.log(filterAge)
-    let arrayAge = people.map((person) => person.name)
-    console.log(arrayAge)
-    let totalAge = people.reduce((sum, person) => {
-        return sum + person.age;
-    }, 0)
-    console.log(totalAge)
-    
+  let allAges = people.map(val => {
+      return val.name;
+  })
+ // console.log(allAges);
+
+ let totalAges = people.reduce((sum,val) => {
+     return sum+val.age;
+ },0)
+ console.log(totalAges);
 }
 onload();
