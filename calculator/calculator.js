@@ -16,11 +16,11 @@ class Calculator {
         var speech = new SpeechSynthesisUtterance();
 
         // Set the text and voice attributes.
-        //   speech.text = `Your awswer is ${eval(this.statement)}`
-        //   speech.volume = 1;
-        //   speech.rate = 1;
-        //   speech.pitch = 1;
-        //   window.speechSynthesis.speak(speech);
+          speech.text = `Hi sarvesh! How are you. Your awswer is ${eval(this.statement)}`
+          speech.volume = 1;
+          speech.rate = 1;
+          speech.pitch = 1;
+          window.speechSynthesis.speak(speech);
     }
     remove() {
         this.statement = this.statement.slice(0,this.statement.length-1);
