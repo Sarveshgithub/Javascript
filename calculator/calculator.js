@@ -29,8 +29,11 @@ class Calculator {
 }
 
 let calc = new Calculator();
+
 //function call on load
 function onload() {
+
+    document.getElementById("x").src="stop.png"
     let btnMarkup = [];
     [7, 8, 9, '/', 4, 5, 6, '*', 1, 2, 3, '-', '.', 0, 'DEL', '='].forEach(val => {
         btnMarkup.push(`<button>${val}</button>`);
