@@ -1,10 +1,14 @@
+body{
+    font-family: 'Fira Sans', sans-serif; 
+    background-color: #D7433F;
+}
 .container {
     height: 500px;
     width: 300px;
     margin: auto;
     display: flex;
     flex-flow: column;
-    box-shadow: 0 0 10px 0 #777; 
+    box-shadow: 0 0 10px 0 rgb(0, 0, 0); 
 }
 
 .display {
@@ -33,10 +37,11 @@ button {
     color: black;
     border: 1px solid #FFF;
     background-image: none;
+    font-family: 'Fira Sans', sans-serif; 
     outline: 0;
     -webkit-box-shadow: none;
             box-shadow: none;
-    font-family: Arial, Helvetica, sans-serif;        
+         
 
 }
 
@@ -54,11 +59,24 @@ button:last-child{
 }
 
 button:nth-last-child(2){
-    padding: 21px;
+    padding: 24px;
 }
 
 span{
-    background-color: yellow;
     flex: 1;
-    border: 1px solid blue;
+}
+p{
+    color: #FFF;
+    text-align: right;
+    margin: 0px;
+}
+
+.display-r {
+    font-size: 55px;
+    padding: 0px 10px 0px 0px;
+}
+
+.display-s {
+    padding: 37px 10px 0px 0px;
+    font-size: 28px;
 }
