@@ -1,15 +1,17 @@
 .container {
-    border: 1px solid ;
     height: 500px;
     width: 300px;
     margin: auto;
     display: flex;
     flex-flow: column;
+    box-shadow: 0 0 10px 0 #777; 
 }
 
 .display {
     flex: 1;
-    background: #2E3548
+    background: #2E3548;
+    display: flex;
+    flex-flow: column;
 }
 .btns{
     flex: 2;
@@ -27,11 +29,36 @@ button {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
-    background-color: #DCDFE6;
+    background-color: #F4F5F9;
     color: black;
-    border: 1px solid #e7e7e7;
+    border: 1px solid #FFF;
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    font-family: Arial, Helvetica, sans-serif;        
+
 }
 
 button:hover {
     background-color: #e7e7e7;
+}
+
+button:nth-child(4n+0) {
+    background-color: #DCDFE6;
+    border: 0px;
+}
+button:last-child{
+    background-color: #D7433F;
+    color: #FFF;
+}
+
+button:nth-last-child(2){
+    padding: 21px;
+}
+
+span{
+    background-color: yellow;
+    flex: 1;
+    border: 1px solid blue;
 }
