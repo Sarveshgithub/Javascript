@@ -27,7 +27,7 @@ class Calculator {
         speech.text = `Your awswer is ${eval(this.statement)}`
         speech.volume = 1;
         speech.rate = 1;
-        speech.pitch = 1;
+        speech.pitch = 1  ;
         window.speechSynthesis.speak(speech);
     }
 }
@@ -78,10 +78,10 @@ function toggle() {
 }
 
 function splitVoice(val) {
-    
     let actualval =  val.replace('multi','*')
     .replace('div','/')
     .replace('add','+')
+    .replace('min','-')
     .replace('x','*')
     .replace(/ /g,'')
     .match(/\d|\+|\-|\*|\./g).join('')
