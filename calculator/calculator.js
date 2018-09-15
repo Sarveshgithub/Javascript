@@ -20,12 +20,11 @@ class Calculator {
     }
     voice(val) {
         this.voiceStart = val;
-        document.getElementById('checkbox').checked = this.statement;
     }
     speak() {
         // Set the text and voice attributes.
         var speech = new SpeechSynthesisUtterance();
-        speech.text = `Hi sarvesh! How are you. Your awswer is ${eval(this.statement)}`
+        speech.text = `Your awswer is ${eval(this.statement)}`
         speech.volume = 1;
         speech.rate = 1;
         speech.pitch = 1;
@@ -59,7 +58,7 @@ recognition.continuous = true;
 recognition.onresult = function(e) {
     const transcript = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('')
     if (e.results[0].isFinal) {
-        calc.update(transcript)
+        splitVoice(transcript)
         if (transcript.includes('equal')) {
             calc.awnswer();
         }
@@ -73,6 +72,18 @@ function toggle() {
         calc.voice(true);
     } else {
         recognition.stop();
+        speechstart = false;
         calc.voice(false);
     }
+}
+
+function splitVoice(val) {
+    
+    let actualval =  val.replace('multi','*')
+    .replace('div','/')
+    .replace('add','+')
+    .replace('x','*')
+    .replace(/ /g,'')
+    .match(/\d|\+|\-|\*|\./g).join('')
+    calc.update(actualval);
 }
