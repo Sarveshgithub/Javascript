@@ -21,14 +21,12 @@ body{
     flex: 2;
     display: flex;
     flex-wrap: wrap;
-    /* background: yellow; */
 }
 button {
-    flex:1px;
+    flex:1;
     padding: 26px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -82,7 +80,7 @@ p{
 }
 
 
- 
+ /* for mobile compatiable */
 @media (max-width: 600px) {
     .container {
         margin: 0px;
@@ -104,7 +102,7 @@ p{
     }
 } 
 
-
+/* style for toggle button */
 .switch {
   position: relative;
   display: inline-block;

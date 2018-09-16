@@ -27,7 +27,7 @@ class Calculator {
         speech.text = `Your awswer is ${eval(this.statement)}`
         speech.volume = 1;
         speech.rate = 1;
-        speech.pitch = 1  ;
+        speech.pitch = 1;
         window.speechSynthesis.speak(speech);
     }
 }
@@ -45,7 +45,7 @@ function onload() {
 }
 onload();
 
-document.addEventListener('click', function(val) {
+document.addEventListener('click', function (val) {
     let target;
     target = val['target']['tagName'].toLowerCase();
     if (target == 'button') {
@@ -55,7 +55,7 @@ document.addEventListener('click', function(val) {
     }
 })
 recognition.continuous = true;
-recognition.onresult = function(e) {
+recognition.onresult = function (e) {
     const transcript = Array.from(e.results).map(result => result[0]).map(result => result.transcript).join('')
     if (e.results[0].isFinal) {
         splitVoice(transcript)
@@ -78,12 +78,12 @@ function toggle() {
 }
 
 function splitVoice(val) {
-    let actualval =  val.replace('multi','*')
-    .replace('div','/')
-    .replace('add','+')
-    .replace('min','-')
-    .replace('x','*')
-    .replace(/ /g,'')
-    .match(/\d|\+|\-|\*|\./g).join('')
+    let actualval = val.replace('multi', '*')
+        .replace('div', '/')
+        .replace('add', '+')
+        .replace('min', '-')
+        .replace('x', '*')
+        .replace(/ /g, '')
+        .match(/\d|\+|\-|\*|\./g).join('')
     calc.update(actualval);
 }
