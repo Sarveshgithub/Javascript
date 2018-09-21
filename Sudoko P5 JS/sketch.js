@@ -10,10 +10,8 @@ var table = [   [4, 2,   ,  ,  ,  ,  ,  , 9],
             ];
 let sudoko;            
 function setup() {
-	createCanvas(280,280);
-	soduko = new Sudoko(table);
-		//soduko.printTable();
-
+	createCanvas(360,360);
+	soduko = new Sudoko(table);	
 }
 
 function draw() {

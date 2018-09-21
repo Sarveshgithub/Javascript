@@ -3,23 +3,23 @@ class Sudoko {
         this.table = table;
     }
     printTable() {
-        //  console.log('table', this.table);
         for (let i = 0; i < this.table.length; i++) {
-            //console.log(this.table[i]);
             for (let j = 0; j < this.table.length; j++) {
                 fill(0)
-                rect(i * 30, j * 30, 30, 30);
+                rect(i * 40, j * 40, 40, 40);
                 stroke(255);
-                // textSize(30);
                 if (this.table[i][j] === undefined) {
                     this.table[i][j] = 0;
                 }
-                //console.log(this.table[i][j])
+                textSize(30);
                 textAlign(CENTER);
                 fill(255)
-                text(this.table[j][i], i * 31, j * 31, 30, 30);
+                text(this.table[j][i], i * 41, j * 41, 40, 40);
             }
         }
-        //console.table(this.table);
+    }
+
+    solveSudoko() {
+        
     }
 }
