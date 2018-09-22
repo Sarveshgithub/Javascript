@@ -12,7 +12,8 @@ class Calculator {
     }
     awnswer() {
         document.getElementById('result').innerHTML = eval(this.statement);
-        if (this.voiceStart) this.speak();
+        if (this.voiceStart) 
+            this.speak();
     }
     remove() {
         this.statement = this.statement.slice(0, this.statement.length - 1);
@@ -49,9 +50,12 @@ document.addEventListener('click', function (val) {
     let target;
     target = val['target']['tagName'].toLowerCase();
     if (target == 'button') {
-        if (val['target']['innerHTML'] == '=') calc.awnswer();
-        else if (val['target']['innerHTML'] == 'DEL') calc.remove();
-        else calc.update(val['target']['innerHTML']);
+        if (val['target']['innerHTML'] == '=') 
+            calc.awnswer();
+        else if (val['target']['innerHTML'] == 'DEL') 
+            calc.remove();
+        else 
+            calc.update(val['target']['innerHTML']);
     }
 })
 recognition.continuous = true;
