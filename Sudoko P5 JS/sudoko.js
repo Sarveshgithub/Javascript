@@ -1,8 +1,9 @@
 class Sudoko {
-    constructor(row, num, col) {
-        this.row = row;
+    constructor(col, row, num, table) {
         this.col = col;
+        this.row = row;
         this.num = num;
+        this.table = table;
     }
 
     printTable() {
@@ -15,37 +16,46 @@ class Sudoko {
         text(this.num, this.row * 41, this.col * 41, 40, 40);
     }
 
-    checkRow(row) {
-        for (var i = 0; i < this.table; i++) {
-            if (i === row[1]) {
+    checkRow() {
+        // console.log('val:', this.num, 'col:', this.row, 'row:', this.col);
+        // console.log('data', this.table[this.col][this.row]);
+        for (var i = 0; i < this.table.length; i++) {
+            //  console.log('data-row', this.table[this.col][i]);
+            if (i === this.row) {
+                // console.log('data-prest', this.table[this.col][i]);
                 continue;
             }
-            if (this.table[row[0]][i] === this.table[row[0]][row[1]]) {
+            if (this.table[this.col][i] === this.num) {
+                // console.log(this.table, this.row)
                 return false;
             }
         }
         return true;
     }
 
-    checkColumn(column) {
-        for (var i = 0; i < this.newTable.length; i++) {
-            if (i === column[0]) {
+    checkColumn() {
+        for (var i = 0; i < this.table.length; i++) {
+             console.log('data-col', this.table[i][this.row]);
+            if (i === this.col) {
+                // console.log('data-prest', this.table[i][this.row]);
                 continue;
             }
-            if (this.newTable[i][column[1]] === this.newTable[column[0]][column[1]]) {
+            if (this.table[i][this.row] === this.num) {
                 return false;
             }
         }
         return true;
     }
 
-    checkSubGrid(grid) {
-        for (var i = Math.floor(grid[0] / 3) * 3; i < Math.floor(grid[0] / 3) * 3 + 3; i++) {
-            for (var j = Math.floor(grid[1] / 3) * 3; j < Math.floor(grid[1] / 3) * 3 + 3; j++) {
-                if ((i === grid[0]) && (j === grid[1])) {
+    checkSubGrid() {
+        //  console.log('val:', this.num, 'col:', this.row, 'row:', this.col);
+        for (var i = Math.floor(this.col / 3) * 3; i < Math.floor(this.col / 3) * 3 + 3; i++) {
+            for (var j = Math.floor(this.row / 3) * 3; j < Math.floor(this.row / 3) * 3 + 3; j++) {
+                
+                if ((i === this.col) && (j === this.row)) {
                     continue;
-                }
-                if (this.newTable[i][j] === this.newTable[grid[0]][grid[1]]) {
+                }   
+                if (this.table[i][j] === this.table[this.col][this.row]) {
                     return false;
                 }
             }
