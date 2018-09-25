@@ -44,19 +44,25 @@ function draw() {
     if (current.num === 0) {
         current.num = number;
         if (!current.checkRow() && !current.checkColumn() && !current.checkRow()) {
-            console.log('sfsdf');
-           // number = 0;
+            console.log('sfsdf', current);
+            //number = 0;
+            current.num = number;
+            stack.push(current);
+            number = 1;
             index++;
             current = sudoko[index];
-            stack.push(current);
+
         }
         else if (number > 8) {
             current.num = 0;
-            current =stack.pop();
+            current = stack.pop();
             number = current.num;
             current.num = 0;
         }
-
+        // else {
+        //     number++;
+        // }
+        // number++;
     }
     else {
         index++;

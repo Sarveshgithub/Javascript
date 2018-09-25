@@ -35,7 +35,7 @@ class Sudoko {
 
     checkColumn() {
         for (var i = 0; i < this.table.length; i++) {
-             console.log('data-col', this.table[i][this.row]);
+            //  console.log('data-col', this.table[i][this.row]);
             if (i === this.col) {
                 // console.log('data-prest', this.table[i][this.row]);
                 continue;
