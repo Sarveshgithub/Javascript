@@ -8,7 +8,7 @@ let data = Json.data();
 
 /**
  * Returns the Array of json 
- * @param {object} {JSON,key,query,list} The number to raise.
+ * @param {object} {JSON,key,query,list} Params of object.
  * @return {Array} filter out from JSON via KEY.
  */
 const filterJSON = params => {
@@ -19,8 +19,8 @@ const filterJSON = params => {
 
 /**
  * Returns the Array of json 
- * @param {object} {JSON,key,query,list} The number to raise.
- * @return {Array} filter out from JSON via KEY.
+ * @param {object} {JSON,key,query} Params of object.
+ * @return {Array} search out from JSON via KEY.
  */
 const searchJSON = params => {
   const { JSON, key, query } = params;
@@ -29,8 +29,8 @@ const searchJSON = params => {
 
 /**
  * Returns the Array of json 
- * @param {object} {JSON,key,query,list} The number to raise.
- * @return {Array} filter out from JSON via KEY.
+ * @param {object} {JSON,key,} The number to raise.
+ * @return {Array} sort out from JSON via KEY.
  */
 const sortJSON = params =>{
   const {JSON , key} = params;
